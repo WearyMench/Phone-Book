@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="bloque activo" id="tab1">
+            <form action="#" class="form" id="form">
+                <h2 id="titulo">Register Contact</h2>
+                <label>
+                    <p id="cambio1">Name:</p>
+                    <input type="text" name="nombre contacto" id="name" placeholder="Ej: Juan Perez">
+                </label>
+                <label>
+                    <p id="cambio2">Number:</p>
+                    <input type="text" name="numero telefonico" id="tel" placeholder="Ej: 809-555-4342">
+                </label>
+                <div class="mensaje" id="mensaje"></div>
+                <input type="submit" value="Save" id="registrar">
+            </form>
+        </div>
+        <div class="bloque dos" id="tab2">
+            <div class="lista">
+                <h2>Contacts</h2>
+                <ol id="list"></ol>
+                <div class="botones">
+                    <button class="delete" id="delete">Delete contact</button>
+                    <button class="delete" id="editar" disabled="true">Edit Contact</button>
+                </div>
+            </div>
+            <div class="edit" id="edit">
+                <p id="text"></p>
+                <input type="number" name="ubicacion" id="ubic">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
