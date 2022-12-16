@@ -37,8 +37,8 @@ const agregarContacto = (e) => {
 let datos = document.getElementById("form");
 datos.addEventListener("submit", agregarContacto);
 
-//When the list is empty, a text will appear that says empty
 let list = document.querySelector("#list");
+//When the list is empty, a text will appear that says empty
 if (list.innerHTML === "") {
   list.textContent = "(Empty)";
 }
@@ -48,50 +48,28 @@ const registrar = () => {
   list.innerHTML = "";
   registro.forEach((e) => {
     let li = document.createElement("li");
-    li.textContent = `${e[0]}  [ ${e[1]} ]`;
+    let contact = `${e[0]}  [${e[1]}]`;
+
+    //adding a delete buttom
+    let button = document.createElement("button");
+    button.classList.add("delete");
+    button.textContent = "x";
+
+    li.appendChild(document.createTextNode(contact));
+    li.appendChild(button);
     list.appendChild(li);
+
+    button.addEventListener("click", () => remove(li, e));
   });
 };
 
-// delete contact
-
-document.getElementById("delete").addEventListener("click", () => {
-  let position = document.getElementById("ubic").value;
-  document.getElementById("text").textContent =
-    "Select the position number of the contact you want to delete and press the delete button again";
-  if (position === "") {
-    document.getElementById("edit").classList.toggle("visible");
-  } else if (position < 1) {
-    document.getElementById("edit").classList.toggle("visible");
-  } else {
-    registro.splice(position - 1, 1);
-    registrar();
-    document.getElementById("ubic").value = "";
-    document.getElementById("edit").classList.toggle("visible");
-  }
-  //To show the word "empty" in case you delete all the elements.
+const remove = (li, conct) => {
+  let index = registro.indexOf(conct);
+  registro.splice(index, 1);
+  // list.removeChild(li);
+  registrar();
+  //When the list is empty, a text will appear that says empty
   if (list.innerHTML === "") {
     list.textContent = "(Empty)";
   }
-});
-
-// const editarContacto = () => {
-//   document.getElementById("text").textContent =
-//     "To edit the contact, first select the contact's position number and then press edit again to enter the new data.";
-//   let posicion = document.getElementById("ubic").value;
-
-//   let edit = document.getElementById("edit");
-
-//   if (posicion === "") {
-//     edit.classList.toggle("visible");
-//   } else if (posicion < 1) {
-//     edit.classList.toggle("visible");
-//   } else {
-//     registro.splice(posicion - 1, 1);
-//     registrar();
-//     document.getElementById("ubic").value = "";
-//     edit.classList.toggle("visible");
-//   }
-// };
-
-// document.getElementById("editar").addEventListener("click", editarContacto);
+};
