@@ -59,14 +59,13 @@ const registrar = () => {
     li.appendChild(button);
     list.appendChild(li);
 
-    button.addEventListener("click", () => remove(li, e));
+    let index = registro.indexOf(e);
+    button.addEventListener("click", () => remove(index));
   });
 };
 
-const remove = (li, conct) => {
-  let index = registro.indexOf(conct);
+const remove = (index) => {
   registro.splice(index, 1);
-  // list.removeChild(li);
   registrar();
   //When the list is empty, a text will appear that says empty
   if (list.innerHTML === "") {
