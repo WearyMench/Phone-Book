@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Contacts.png" type="image/x-icon">
-    <title>Registro</title>
+    <title>Contacts</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,20 +14,20 @@
     <div class="container">
 
         <form action="#" class="form" id="form">
-            <h2 id="titulo">Add Contact</h2>
+            <h2>Add Contact</h2>
             <label>
-                <p id="cambio1">Name:</p>
-                <input type="text" name="nombre contacto" id="name" placeholder="Ej: Juan Perez">
+                <p>Name:</p>
+                <input type="text" name="name" id="name" placeholder="Ej: Juan Perez">
             </label>
             <label>
-                <p id="cambio2">Number:</p>
-                <input type="text" name="numero telefonico" id="tel" placeholder="Ej: 809-555-4342">
+                <p>Number:</p>
+                <input type="text" name="number" id="tel" placeholder="Ej: 809-555-4342">
             </label>
-            <div class="mensaje" id="mensaje"></div>
-            <input type="submit" value="Save" id="registrar">
+            <div class="message" id="message"></div>
+            <input type="submit" value="Save">
         </form>
 
-        <div class="lista">
+        <div class="list">
             <h2>Contacts</h2>
             <ol id="list"></ol>
         </div>

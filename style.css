@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* General styles */
 
 * {
     margin: 0px;
@@ -23,7 +23,7 @@ body {
     margin-top: 50px;
 }
 
-/* Estilos formulario */
+/* form styles */
 
 .form {
     width: 30%;
@@ -80,7 +80,7 @@ input[type=submit]:hover {
     background-color: rgb(189, 158, 189)
 }
 
-.mensaje {
+.message {
     width: 100%;
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     border-radius: 5px;
@@ -89,13 +89,13 @@ input[type=submit]:hover {
     color: gray;
 }
 
-.mensaje:empty {
+.message:empty {
     display: none;
 }
 
-/* Estilos lista */
+/* List Styles */
 
-.lista {
+.list {
     width: 30%;
     margin: 0px auto;
     background-color: white;
@@ -105,14 +105,14 @@ input[type=submit]:hover {
     flex-direction: column;
 }
 
-.lista h2 {
+.list h2 {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
     color: teal;
 }
 
-.lista ol {
+.list ol {
     list-style-position: inside;
     padding-left: 20px;
     padding-bottom: 10px;
@@ -135,12 +135,14 @@ input[type=submit]:hover {
     box-shadow: inset 0px 0px 3px rgb(93, 56, 56);
 }
 
+/* Responsive */
+
 @media (max-width: 800px) {
     .form {
         width: 40%;
     }
 
-    .lista {
+    .list {
         width: 40%;
     }
 }
@@ -150,7 +152,7 @@ input[type=submit]:hover {
         width: 50%;
     }
 
-    .lista {
+    .list {
         width: 50%;
     }
 }
@@ -160,7 +162,7 @@ input[type=submit]:hover {
         width: 80%;
     }
 
-    .lista {
+    .list {
         width: 80%;
     }
 }

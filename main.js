@@ -6,7 +6,7 @@
 let registro = [];
 
 //Function to add the data of the contacts to the array.
-const agregarContacto = (e) => {
+const saveContact = (e) => {
   e.preventDefault();
   let name = document.getElementById("name").value;
   let tel = document.getElementById("tel").value;
@@ -28,14 +28,14 @@ const agregarContacto = (e) => {
     setTimeout(() => {
       mensaje.textContent = "";
     }, 5000);
-    registrar();
+    print();
   }
   datos.reset();
 };
 
-//Submitting the form will activate the agregarContacto function.
+//Submitting the form will activate the saveContact function.
 let datos = document.getElementById("form");
-datos.addEventListener("submit", agregarContacto);
+datos.addEventListener("submit", saveContact);
 
 let list = document.querySelector("#list");
 //When the list is empty, a text will appear that says empty
@@ -44,7 +44,7 @@ if (list.innerHTML === "") {
 }
 
 //display of the list of added contacts.
-const registrar = () => {
+const print = () => {
   list.innerHTML = "";
   registro.forEach((e) => {
     let li = document.createElement("li");
@@ -66,7 +66,7 @@ const registrar = () => {
 
 const remove = (index) => {
   registro.splice(index, 1);
-  registrar();
+  print();
   //When the list is empty, a text will appear that says empty
   if (list.innerHTML === "") {
     list.textContent = "(Empty)";
