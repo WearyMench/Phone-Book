@@ -10,23 +10,23 @@ const saveContact = (e) => {
   e.preventDefault();
   let name = document.getElementById("name").value;
   let tel = document.getElementById("tel").value;
-  let mensaje = document.getElementById("mensaje");
+  let message = document.getElementById("message");
 
   if (name === "") {
-    mensaje.textContent = "Missing data to register the contact";
+    message.textContent = "Missing data to register the contact";
     setTimeout(() => {
-      mensaje.textContent = "";
+      message.textContent = "";
     }, 5000);
   } else if (tel === "") {
-    mensaje.textContent = "Missing data to register the contact";
+    message.textContent = "Missing data to register the contact";
     setTimeout(() => {
-      mensaje.textContent = "";
+      message.textContent = "";
     }, 5000);
   } else {
     registro.push([name, tel]);
-    mensaje.textContent = `The contact ${name} has been added with the number ${tel}`;
+    message.textContent = `The contact ${name} has been added with the number ${tel}`;
     setTimeout(() => {
-      mensaje.textContent = "";
+      message.textContent = "";
     }, 5000);
     print();
   }
